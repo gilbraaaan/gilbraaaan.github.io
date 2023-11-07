@@ -1,0 +1,326 @@
+html {
+    scroll-behavior: smooth;
+   }
+a{    
+    text-decoration: none;
+}
+p{
+    font-family:'Courier New', Courier, monospace;
+    margin:auto;
+    text-align: center;
+    color: rgb(255, 254, 254);
+}
+body{
+    background-color: rgb(48, 47, 47);
+}
+h4{
+    margin-top: 10px;
+}
+
+/*#region ----*/
+.classMain{
+    background: fixed;
+}
+.BackgroundBiru{
+    background: fixed;
+    background-color: #2c3670;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.BackgroundMerah{
+    background: fixed;
+    background-color: #702c2c;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.Content{
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 20px;
+    color: aliceblue;
+    padding-top: 30px;
+    margin-top: 1%;
+    margin-bottom: 4%;
+}
+
+.GalleryLearn{
+    background-color: #2c3670;
+    margin: auto;
+    width: 250px;
+    padding-bottom: 25px;
+    border-radius: 20px;
+}
+
+.ImageLearn{
+    width:  250px; 
+    height: 150px; 
+    position: relative;
+}
+
+/*#endregion*/
+
+/*#region ----*/
+.Container-Portfolio{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit,minmax(590px, 1fr));
+  }
+  /*#region SCREEN MAX MIN WIDTH DETECT*/
+  @media only screen and (min-width: 900px) {
+    .Container-Portfolio{
+        width: 67%;
+        }
+    }
+
+        /*#region SCREEN GRID LEARN*/
+    @media only screen and (min-width: 1640px) {
+        .GridContainer{
+            margin-top: 1%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 67%;
+            grid-template-columns: repeat(auto-fit,minmax(590px, 1fr));
+        }
+        .GalleryLearn{
+          display: block !important;
+          }
+        .ButtonCanHide{
+            display: none;
+        }
+      }
+      
+    @media only screen and (max-width: 1640px) {
+        .GalleryLearn{
+          display: none;
+          }
+        .GalleryLearn:first-child{
+            display: list-item;
+        }
+        .ButtonCanHide{    
+            margin-top: 3%;
+        }
+      }
+      /*#endregion */
+
+        /*#region SCREEN GRID PORTO*/
+        @media screen and (max-width: 750px) {
+            .GalleryDesign{
+                width: calc(17vh - 0px);
+                height: calc(17vh - 0px);
+            }
+            .Iframe{
+                width:calc(50vh - 1vmax); 
+                height: 150px; 
+                display: none;
+                margin-bottom: 3%;
+                margin-left: 2%;
+            }
+            .ImgJS{
+                width: calc(50vh - 0vmax);
+                height: calc(25vh - 0vmax);
+                display: none;
+            }
+        }
+        @media screen and (min-width: 750px) {
+            .GalleryDesign{
+                width: 200px;
+                height: 200px;
+            }
+            .Iframe{
+                width :550px; 
+                height: 150px; 
+                display: none;
+                margin-bottom: 3%;
+            }
+            .ImgJS{
+                width :550px; height: 300px; 
+                display: none;
+            }
+        }
+        /*#endregion */
+    
+    /*#endregion */
+
+  .GridSpanPortfolio{
+    margin: auto;
+  }
+
+  .Gallery{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    }
+  .SlideContent{
+      margin-top: 1%;
+  }
+  
+  .SlideCenter{
+      margin-top: 3%;
+  }
+  .ImgJS:first-child{
+      display:list-item;
+  }
+  
+  .Iframe:first-child{
+      display:list-item;
+  }
+  .SlideIframe{
+      margin-top: 3%;
+      text-align: center !important;
+  }
+
+.SlideYoutube{
+    margin: auto;
+    margin-top: 1%;
+}
+.YoutubeShow{
+    margin: auto;
+    display: none;
+    margin-bottom: 3%;
+    width:calc(50vh - 1vmax); 
+    height:calc(25vh - 0vmax);
+}
+.YoutubeShow:first-child{
+    display:list-item;
+    width:calc(50vh - 1vmax);
+    height:calc(25vh - 0vmax);
+}
+
+ /*#endregion */
+
+ /*#region ----*/
+.GridSkills{
+    margin:auto;
+    margin-top: 25px;
+}
+
+.IconSkills{
+    margin:auto;
+    width: 70px;
+    height: 70px;
+}
+img {
+    pointer-events: none;
+  }
+/*#endregion */
+
+
+/*#region BUTTON*/
+.ButtonDesign{
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-82-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(32, 91%, 26%) 8%,
+      hsl(32, 91%, 26%) 8%,
+      hsl(32, 91%, 26%) 8%,
+      hsl(32, 91%, 26%) 8%
+    );
+  }
+  
+  .button-82-front {
+    display: block;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: #fb8332;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+  }
+  /*#endregion */
+
+  @media (min-width: 768px) {
+    .button-82-front {
+      font-size: 1.25rem;
+      padding: 12px 42px;
+    }
+  }
+  
+/*#region HOVER*/
+
+.ButtonDesign:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -10px 12px;
+  }
+  
+  .ButtonDesign:hover .button-82-front {
+    transform: translateY(-6px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  
+  .ButtonDesign:active .button-82-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  
+  .ButtonDesign:hover .button-82-shadow {
+    transform: translateY(4px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  
+  .ButtonDesign:active .button-82-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  
+  .ButtonDesign:focus:not(:focus-visible) {
+    outline: none;
+  }
+/*#endregion */
+
+
+/* #region The Modal (background) */
+.ForHide{
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.ImageOOP{
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+  /* #endregion */
