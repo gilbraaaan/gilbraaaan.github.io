@@ -17,6 +17,25 @@ function showDivs(n) {
 }
 //#endregion
 
+
+//#region  SLIDESHOW
+var slideARIndex = 1;
+function arDivs(n) {
+    showDivs(slideARIndex += n);
+  }
+function showDivs(n) {
+  var i;
+  var Image = document.getElementsByClassName("ARClick");
+  if (n > Image.length) {slideARIndex = 1}    
+  if (n < 1) {slideARIndex = Image.length}
+  for (i = 0; i < Image.length; i++) {
+    Image[i].style.display = "none";  
+  }
+  Image[slideARIndex-1].style.display = "block";  
+}
+//#endregion
+
+
 //#region IFRAME SLIDESHOW
 var slideIframe = 1;
 function plusIframe(n) {
