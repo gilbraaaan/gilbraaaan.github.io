@@ -124,10 +124,6 @@ h4{
                 display: none;
             }
             /*#region AR */
-            .ARImage{
-              width: 200px;
-              height:400px;
-            }
             .GalleryAR{
               margin: auto;
               width: 250px;
@@ -151,10 +147,6 @@ h4{
                 display: none;
             }
             /*#region AR */
-            .ARImage{
-              width: 200px;
-              height:400px;
-            }
             .GalleryAR{
               margin: auto;
               width: 250px;
@@ -165,6 +157,11 @@ h4{
         /*#endregion */
     
     /*#endregion */
+
+    .ARImage{
+      width: 200px;
+      height:400px;
+    }
 
   .GridSpanPortfolio{
     margin: auto;
