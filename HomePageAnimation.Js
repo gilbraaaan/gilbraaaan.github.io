@@ -3,9 +3,9 @@
 //#region  SLIDESHOW
 var slideIndex = 1;
 function plusDivs(n) {
-    showDivs(slideIndex += n);
+  showPublished(slideIndex += n);
   }
-function showDivs(n) {
+function showPublished(n) {
   var i;
   var Image = document.getElementsByClassName("ImgJS");
   if (n > Image.length) {slideIndex = 1}    
