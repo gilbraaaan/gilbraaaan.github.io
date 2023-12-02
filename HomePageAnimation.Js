@@ -19,6 +19,23 @@ function showPublished(n) {
 
 
 //#region  SLIDESHOW
+var slideplusPersonal = 1;
+function plusPersonal(n) {
+  showPersonal(slideplusPersonal += n);
+  }
+function showPersonal(n) {
+  var i;
+  var Image = document.getElementsByClassName("ImgPersonalProject");
+  if (n > Image.length) {slideplusPersonal = 1}    
+  if (n < 1) {slideplusPersonal = Image.length}
+  for (i = 0; i < Image.length; i++) {
+    Image[i].style.display = "none";  
+  }
+  Image[slideplusPersonal-1].style.display = "block";  
+}
+//#endregion
+
+//#region  SLIDESHOW
 var slideARIndex = 1;
 function arDivs(n) {
     showDivs(slideARIndex += n);
