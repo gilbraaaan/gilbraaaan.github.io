@@ -1,4 +1,11 @@
 
+//#region Typewrite
+function efekKetikan(){
+  var typed = new Typed('.element', {
+    strings: ["M Gilbran Eka Pawitra", "Second sentence."],
+    typeSpeed: 30
+  });
+}
 
 //#region  SLIDESHOW
 var slideIndex = 1;
@@ -16,7 +23,6 @@ function showPublished(n) {
   Image[slideIndex-1].style.display = "block";  
 }
 //#endregion
-
 
 //#region  SLIDESHOW
 var slideplusPersonal = 1;
@@ -51,7 +57,6 @@ function showDivs(n) {
   Image[slideARIndex-1].style.display = "block";  
 }
 //#endregion
-
 
 //#region IFRAME SLIDESHOW
 var slideIframe = 1;
@@ -104,7 +109,6 @@ function showOop(n) {
 }
 //#endregion
 
-
 //#region Get the modal
 var intOop = 1;
 function processContent(v){
@@ -125,7 +129,6 @@ function closeContentOop(){
   }
 }
 //#endregion
-
 
 document.addEventListener("contextmenu", function(e){
   if (e.target.nodeName === "IMG") {
