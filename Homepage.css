@@ -57,7 +57,6 @@ h4{
     height: 150px; 
     position: relative;
 }
-
 /*#endregion*/
 
 /*#region SCREEN*/
@@ -67,7 +66,7 @@ h4{
     margin: auto;
     grid-template-columns: repeat(auto-fit,minmax(590px, 1fr));
   }
-  /*#region SCREEN MAX MIN WIDTH DETECT*/
+  /*#region SCREEN MAX = UKURAN KECIL, MIN = UKURAN LEBIH DARI BATAS*/
   @media only screen and (min-width: 900px) {
     .Container-Portfolio{
         width: 67%;
@@ -102,9 +101,6 @@ h4{
             margin-bottom: 3%;
             width: 500px; 
             height:300px;
-        }
-        .YoutubeShow:first-child{
-            display:list-item;
         }
         .ImgPersonalProject{
           width: 300px; 
@@ -187,6 +183,12 @@ h4{
               padding-bottom: 5px;
             }
             /*#endregion*/
+            
+            .sketchFabResponsive{
+              width: 300px;
+              height: 300px;
+              display: none;
+            }
         }
         @media screen and (min-width: 750px) {
           /*#region BESAR*/
@@ -230,6 +232,12 @@ h4{
               padding-bottom: 25px;
             }
             /*#endregion*/
+
+            .sketchFabResponsive{
+              width: 500px;
+              height: 500px;
+              display: none;
+            }
         }
         /*#endregion */
     
@@ -262,6 +270,10 @@ h4{
   }
   .ImgJS:first-child{
       display:list-item;
+  }
+  
+  .sketchFabBtn:first-child{
+    display:list-item;
   }
   
   .PersonalProject{

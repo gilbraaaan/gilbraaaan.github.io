@@ -8,6 +8,23 @@ function efekKetikan(){
 }
 
 //#region  SLIDESHOW
+var slideInFrameFab = 1;
+function plusFab(n) {
+  showFab(slideInFrameFab += n);
+  }
+function showFab(n) {
+  var i;
+  var Image = document.getElementsByClassName("sketchFabBtn");
+  if (n > Image.length) {slideInFrameFab = 1}    
+  if (n < 1) {slideInFrameFab = Image.length}
+  for (i = 0; i < Image.length; i++) {
+    Image[i].style.display = "none";  
+  }
+  Image[slideInFrameFab-1].style.display = "block";  
+}
+//#endregion
+
+//#region  SLIDESHOW
 var slideIndex = 1;
 function plusDivs(n) {
   showPublished(slideIndex += n);
