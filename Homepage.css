@@ -21,16 +21,16 @@ h4{
 .classMain{
     background: fixed;
 }
-.BackgroundBiru{
+.BackgroundHijau{
     background: fixed;
-    background-color: #2c3670;
+    background-color: #418d2e;
     padding-top: 1px;
     padding-bottom: 1px;
 }
 
-.BackgroundMerah{
+.BackgroundBiru{
     background: fixed;
-    background-color: #702c2c;
+    background-color: #2c3670;
     padding-top: 1px;
     padding-bottom: 1px;
 }
