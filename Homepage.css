@@ -285,6 +285,8 @@ h4{
     /*#endregion */
 
     .ARImage{
+      position: relative;
+      z-index: 2;
       width: 200px;
       height:400px;
     }
