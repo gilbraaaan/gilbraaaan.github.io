@@ -93,7 +93,7 @@ h4{
         }
     }
 
-        /*#region SCREEN GRID LEARN*/
+    /*#region SCREEN GRID PORTO A*/
     @media only screen and (min-width: 1640px) {
         .GridContainer{
             padding-top: 55px;
@@ -104,10 +104,10 @@ h4{
             width: 67%;
             grid-template-columns: repeat(auto-fit,minmax(590px, 1fr));
         }
-        .GalleryLearn,.GalleryAR{
+        .GalleryLearn,.GalleryPorto{
           display: block !important;
           }
-        .ButtonCanHide,.ButtonAR{
+        .ButtonCanHide,.ButtonPorto{
             display: none;
         }
         .YoutubeShow,.YoutubeShow:first-child{
@@ -135,13 +135,13 @@ h4{
       }
       
     @media only screen and (max-width: 1640px) {
-        .GalleryLearn,.GalleryAR{
+        .GalleryLearn,.GalleryPorto{
           display: none;
           }
-        .GalleryLearn:first-child,.GalleryAR:first-child{
+        .GalleryLearn:first-child,.GalleryPorto:first-child{
             display: list-item;
         }
-        .ButtonCanHide,.ButtonAR{    
+        .ButtonCanHide,.ButtonPorto{    
             margin-top: 3%;
         }
         .YoutubeShow,.YoutubeShow:first-child{
@@ -170,9 +170,247 @@ h4{
           display: none;
         }
       }
-      /*#endregion */
+    /*#endregion */
+    
+    /*#region SCREEN GRID PORTO B*/
+    @media only screen and (min-width: 1640px) {
+      .GridContainer{
+          padding-top: 55px;
+          padding-bottom: 55px;
+          display: flex;
+          flex-wrap: wrap;
+          margin: auto;
+          width: 67%;
+          grid-template-columns: repeat(auto-fit,minmax(590px, 1fr));
+      }
+      .GalleryLearn,.GalleryPorto{
+        display: block !important;
+        }
+      .ButtonCanHide,.ButtonPorto{
+          display: none;
+      }
+      .YoutubeShow,.YoutubeShow:first-child{
+          margin: auto;
+          display: none;
+          margin-bottom: 3%;
+          width: 500px; 
+          height:300px;
+      }
+      .ImgPersonalProject{
+        position: relative;
+        z-index: 2;
+        width: 300px; 
+        height:150px;
+        display: none;
+        margin: auto;
+      }
+      .sketchFabResponsive{
+        position: relative;
+        z-index: 2;
+        width: 300px;
+        height: 300px;
+        display: none;
+      }
+    }
+    
+  @media only screen and (max-width: 1640px) {
+      .GalleryLearn,.GalleryPorto{
+        display: none;
+        }
+      .GalleryLearn:first-child,.GalleryPorto:first-child{
+          display: list-item;
+      }
+      .ButtonCanHide,.ButtonPorto{    
+          margin-top: 3%;
+      }
+      .YoutubeShow,.YoutubeShow:first-child{
+          margin: auto;
+          display: none;
+          margin-bottom: 3%;
+          width: 500px; 
+          height:300px;
+      }
+      .YoutubeShow:first-child{
+          display:list-item;
+      }
+      .ImgPersonalProject{
+        position: relative;
+        z-index: 2;
+        width: 300px; 
+        height:150px;
+        display: none;
+        margin: auto;
+      }
+      .sketchFabResponsive{
+        position: relative;
+        z-index: 2;
+        width: 500px;
+        height: 500px;
+        display: none;
+      }
+    }
+  /*#endregion */
 
-        /*#region SCREEN GRID PORTO*/
+    /*#region SCREEN GRID AR A*/
+@media only screen and (min-width: 1640px) {
+  .GridContainer{
+      padding-top: 55px;
+      padding-bottom: 55px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      width: 67%;
+      grid-template-columns: repeat(auto-fit,minmax(590px, 1fr));
+  }
+  .GalleryLearn,.GalleryAR{
+    display: block !important;
+    }
+  .ButtonCanHide,.ButtonAR{
+      display: none;
+  }
+  .YoutubeShow,.YoutubeShow:first-child{
+      margin: auto;
+      display: none;
+      margin-bottom: 3%;
+      width: 500px; 
+      height:300px;
+  }
+  .ImgPersonalProject{
+    position: relative;
+    z-index: 2;
+    width: 300px; 
+    height:150px;
+    display: none;
+    margin: auto;
+  }
+  .sketchFabResponsive{
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    height: 300px;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1640px) {
+  .GalleryLearn,.GalleryAR{
+    display: none;
+    }
+  .GalleryLearn:first-child,.GalleryAR:first-child{
+      display: list-item;
+  }
+  .ButtonCanHide,.ButtonAR{    
+      margin-top: 3%;
+  }
+  .YoutubeShow,.YoutubeShow:first-child{
+      margin: auto;
+      display: none;
+      margin-bottom: 3%;
+      width: 500px; 
+      height:300px;
+  }
+  .YoutubeShow:first-child{
+      display:list-item;
+  }
+  .ImgPersonalProject{
+    position: relative;
+    z-index: 2;
+    width: 300px; 
+    height:150px;
+    display: none;
+    margin: auto;
+  }
+  .sketchFabResponsive{
+    position: relative;
+    z-index: 2;
+    width: 500px;
+    height: 500px;
+    display: none;
+  }
+}
+/*#endregion */
+
+   /*#region SCREEN GRID AR B*/
+@media only screen and (min-width: 1640px) {
+  .GridContainer{
+      padding-top: 55px;
+      padding-bottom: 55px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      width: 67%;
+      grid-template-columns: repeat(auto-fit,minmax(590px, 1fr));
+  }
+  .GalleryLearn,.GalleryAR{
+    display: block !important;
+    }
+  .ButtonCanHide,.ButtonAR{
+      display: none;
+  }
+  .YoutubeShow,.YoutubeShow:first-child{
+      margin: auto;
+      display: none;
+      margin-bottom: 3%;
+      width: 500px; 
+      height:300px;
+  }
+  .ImgPersonalProject{
+    position: relative;
+    z-index: 2;
+    width: 300px; 
+    height:150px;
+    display: none;
+    margin: auto;
+  }
+  .sketchFabResponsive{
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    height: 300px;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1640px) {
+  .GalleryLearn,.GalleryAR{
+    display: none;
+    }
+  .GalleryLearn:first-child,.GalleryAR:first-child{
+      display: list-item;
+  }
+  .ButtonCanHide,.ButtonAR{    
+      margin-top: 3%;
+  }
+  .YoutubeShow,.YoutubeShow:first-child{
+      margin: auto;
+      display: none;
+      margin-bottom: 3%;
+      width: 500px; 
+      height:300px;
+  }
+  .YoutubeShow:first-child{
+      display:list-item;
+  }
+  .ImgPersonalProject{
+    position: relative;
+    z-index: 2;
+    width: 300px; 
+    height:150px;
+    display: none;
+    margin: auto;
+  }
+  .sketchFabResponsive{
+    position: relative;
+    z-index: 2;
+    width: 500px;
+    height: 500px;
+    display: none;
+  }
+}
+/*#endregion */
+
+
+    /*#region SCREEN GRID PORTO dan AR*/
         @media screen and (max-width: 750px) {
           /*#region KECIL*/
             .GalleryDesign{
@@ -211,14 +449,23 @@ h4{
               margin: auto;
             }
             /*#endregion */
-            /*#region AR */
+            
+            /*#region PORTO */
             .GalleryAR{
               margin: auto;
               width: 250px;
               padding-bottom: 5px;
             }
             /*#endregion*/
-            
+
+            /*#region PORTO */
+            .GalleryPorto{
+              margin: auto;
+              width: 250px;
+              padding-bottom: 5px;
+            }
+            /*#endregion*/
+
             .sketchFabResponsive{
               position: relative;
               z-index: 2;
@@ -264,8 +511,17 @@ h4{
               display: none;
             }
             /*#endregion */
-            /*#region AR */
+
+            /*#region Porto */
             .GalleryAR{
+              margin: auto;
+              width: 250px;
+              padding-bottom: 25px;
+            }
+            /*#endregion*/
+
+            /*#region Porto */
+            .GalleryPorto{
               margin: auto;
               width: 250px;
               padding-bottom: 25px;

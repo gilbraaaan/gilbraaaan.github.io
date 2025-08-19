@@ -75,6 +75,24 @@ function showDivs(n) {
 }
 //#endregion
 
+
+//#region  SLIDESHOW PORTO
+var slidePortoIndex = 1;
+function portoDivs(n) {
+    showPortoDivs(slidePortoIndex += n);
+  }
+function showPortoDivs(n) {
+  var i;
+  var Image = document.getElementsByClassName("ARClick");
+  if (n > Image.length) {slidePortoIndex = 1}    
+  if (n < 1) {slidePortoIndex = Image.length}
+  for (i = 0; i < Image.length; i++) {
+    Image[i].style.display = "none";  
+  }
+  Image[slidePortoIndex-1].style.display = "block";  
+}
+//#endregion
+
 //#region IFRAME SLIDESHOW
 var slideIframe = 1;
 function plusIframe(n) {
