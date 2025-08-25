@@ -83,7 +83,7 @@ function portoDivs(n) {
   }
 function showPortoDivs(n) {
   var i;
-  var Image = document.getElementsByClassName("ARClick");
+  var Image = document.getElementsByClassName("PortoClick");
   if (n > Image.length) {slidePortoIndex = 1}    
   if (n < 1) {slidePortoIndex = Image.length}
   for (i = 0; i < Image.length; i++) {
