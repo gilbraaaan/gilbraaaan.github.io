@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Loading AR...</title>
+
+  <!-- Mobile friendly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 40vh;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div>Loading AR experience</div>
+
+  <script>
+    (function () {
+      // Ambil query string
+      const params = new URLSearchParams(window.location.search);
+      const path = params.get("path");
+
+      if (path) {
+        // Decode dan simpan ke localStorage
+        const decodedPath = decodeURIComponent(path);
+
+        localStorage.setItem("DROPBOX_PATH", decodedPath);
+
+        console.log("[REDIRECT] PATH SAVED:", decodedPath);
+      } else {
+        console.warn("[REDIRECT] NO PATH PARAM FOUND");
+      }
+
+      // Redirect ke WebAR itch.io
+      window.location.href =
+        "https://webarnewspaper.netlify.app/";
+    })();
+  </script>
+
+</body>
+</html>
