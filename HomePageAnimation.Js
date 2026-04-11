@@ -1,175 +1,111 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Smooth Scrolling for navbar links
+    document.querySelectorAll('.pixel-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if(targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetEl = document.querySelector(targetId);
+                if(targetEl) {
+                    targetEl.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
 
-//#region Typewrite
-function efekKetikan(){
-  var typed = new Typed('.element', {
-    strings: ["M Gilbran Eka Pawitra", "Second sentence."],
-    typeSpeed: 30
-  });
-}
+    // 2. Typing Effect for Dialog Box
+    const dialogText = document.getElementById('dialog-typing');
+    if (dialogText) {
+        const originalText = dialogText.innerHTML;
+        dialogText.innerHTML = '';
+        let i = 0;
+        
+        // Trigger typing when section is in view
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                typeWriter();
+                observer.disconnect();
+            }
+        }, { threshold: 0.5 });
+        
+        // Observe the dialog box parent
+        const dialogParent = document.querySelector('.dialog-box');
+        if(dialogParent) observer.observe(dialogParent);
 
-//#region  SLIDESHOW
-var slideInFrameFab = 1;
-function plusFab(n) {
-  showFab(slideInFrameFab += n);
-  }
-function showFab(n) {
-  var i;
-  var Image = document.getElementsByClassName("sketchFabBtn");
-  if (n > Image.length) {slideInFrameFab = 1}    
-  if (n < 1) {slideInFrameFab = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slideInFrameFab-1].style.display = "block";  
-}
-//#endregion
+        function typeWriter() {
+            if (i < originalText.length) {
+                dialogText.innerHTML += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 30); // Speed of typing
+            }
+        }
+    }
 
-//#region  SLIDESHOW
-var slideIndex = 1;
-function plusDivs(n) {
-  showPublished(slideIndex += n);
-  }
-function showPublished(n) {
-  var i;
-  var Image = document.getElementsByClassName("ImgJS");
-  if (n > Image.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slideIndex-1].style.display = "block";  
-}
-//#endregion
+    // 3. Advanced Animations using Motion (Framer Motion API for Vanilla JS)
+    if (typeof Motion !== 'undefined') {
+        const { animate, inView, stagger } = Motion;
+        
+        // Section Entry animations (Pop Up)
+        inView('.pop-anim', (info) => {
+            animate(info.target, 
+                { opacity: [0, 1], y: [30, 0] }, 
+                { duration: 0.5, easing: "ease-out" }
+            );
+        });
 
-//#region  SLIDESHOW
-var slideplusPersonal = 1;
-function plusPersonal(n) {
-  showPersonal(slideplusPersonal += n);
-  }
-function showPersonal(n) {
-  var i;
-  var Image = document.getElementsByClassName("ImgPersonalProject");
-  if (n > Image.length) {slideplusPersonal = 1}    
-  if (n < 1) {slideplusPersonal = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slideplusPersonal-1].style.display = "block";  
-}
-//#endregion
+        // Health Bar Loading Effect
+        inView('.health-bar', (info) => {
+            const el = info.target;
+            const targetWidth = el.style.width; 
+            el.style.width = '0%'; 
+            animate(el,
+                { width: targetWidth },
+                { duration: 1.2, delay: 0.3, easing: "ease-out" }
+            );
+        });
 
-//#region  SLIDESHOW
-var slideARIndex = 1;
-function arDivs(n) {
-    showDivs(slideARIndex += n);
-  }
-function showDivs(n) {
-  var i;
-  var Image = document.getElementsByClassName("ARClick");
-  if (n > Image.length) {slideARIndex = 1}    
-  if (n < 1) {slideARIndex = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slideARIndex-1].style.display = "block";  
-}
-//#endregion
+        // Staggered Inventory Items Entry
+        inView('.inventory-grid', (info) => {
+            const items = info.target.querySelectorAll('.item-slot');
+            if(items.length > 0) {
+                animate(
+                    items,
+                    { opacity: [0, 1], scale: [0.5, 1] },
+                    { delay: stagger(0.1), duration: 0.4 }
+                );
+            }
+        });
 
+    } else {
+        console.warn("Motion library not loaded, animations fallbacked to CSS.");
+        // Fallback: manually reveal elements
+        document.querySelectorAll('.pop-anim').forEach(el => {
+            el.style.opacity = '1';
+        });
+    }
+});
 
-//#region  SLIDESHOW PORTO
-var slidePortoIndex = 1;
-function portoDivs(n) {
-    showPortoDivs(slidePortoIndex += n);
-  }
-function showPortoDivs(n) {
-  var i;
-  var Image = document.getElementsByClassName("PortoClick");
-  if (n > Image.length) {slidePortoIndex = 1}    
-  if (n < 1) {slidePortoIndex = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slidePortoIndex-1].style.display = "block";  
-}
-//#endregion
-
-//#region IFRAME SLIDESHOW
-var slideIframe = 1;
-function plusIframe(n) {
-    showIframes(slideIframe += n);
-  }
-function showIframes(n) {
-  var i;
-  var Image = document.getElementsByClassName("Iframe");
-  if (n > Image.length) {slideIframe = 1}    
-  if (n < 1) {slideIframe = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slideIframe-1].style.display = "block";  
-}
-//#endregion
-
-//#region YOUTUBE SLIDESHOW
-var slideYoutubePortofolio = 1;
-function plusYoutube(n) {
-    showYoutube(slideYoutubePortofolio += n);
-  }
-function showYoutube(n) {
-  var i;
-  var Image = document.getElementsByClassName("YoutubeShow");
-  if (n > Image.length) {slideYoutubePortofolio  = 1}    
-  if (n < 1) {slideYoutubePortofolio  = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slideYoutubePortofolio -1].style.display = "block";  
-}
-//#endregion
-
-//#region OOP
-var slideOop = 1;
-function oopDivs(n) {
-    showOop(slideOop += n);
-  }
-function showOop(n) {
-  var i;
-  var Image = document.getElementsByClassName("oopClick");
-  if (n > Image.length) {slideOop  = 1}    
-  if (n < 1) {slideOop  = Image.length}
-  for (i = 0; i < Image.length; i++) {
-    Image[i].style.display = "none";  
-  }
-  Image[slideOop -1].style.display = "block";  
-}
-//#endregion
-
-//#region Get the modal
-var intOop = 1;
-function processContent(v){
-  showContentOop(v)
-}
-function showContentOop(x){
-  var imgOop = document.getElementsByClassName("ForHide");
-  for (i = 0; i < imgOop.length; i++) {
-    imgOop[i].style.display = "none";  
-  }
-  imgOop[x].style.display = "block";  
-}
-
-function closeContentOop(){
-  var imgOop = document.getElementsByClassName("ForHide");
-  for (i = 0; i < imgOop.length; i++) {
-    imgOop[i].style.display = "none";  
-  }
-}
-//#endregion
-
-document.addEventListener("contextmenu", function(e){
-  if (e.target.nodeName === "IMG") {
-      e.preventDefault();
-  }
-}, false);
-window.oncontextmenu = function () {
-  return false;
-}
+// Carousel Logic
+window.moveSlide = function(carouselId, step) {
+    const container = document.getElementById(carouselId);
+    if(!container) return;
+    
+    const slides = container.querySelectorAll('.carousel-slide');
+    if(slides.length === 0) return;
+    
+    let activeIndex = 0;
+    slides.forEach((slide, idx) => {
+        if(slide.classList.contains('active')) {
+            activeIndex = idx;
+            slide.classList.remove('active');
+        }
+    });
+    
+    let newIndex = activeIndex + step;
+    if(newIndex >= slides.length) newIndex = 0;
+    if(newIndex < 0) newIndex = slides.length - 1;
+    
+    slides[newIndex].classList.add('active');
+};
