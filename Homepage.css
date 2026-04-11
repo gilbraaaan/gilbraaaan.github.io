@@ -22,6 +22,12 @@
 
 body {
     background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(rgba(57, 255, 20, 0.05) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(57, 255, 20, 0.05) 2px, transparent 2px);
+    background-size: 40px 40px;
+    background-position: center center;
+    background-attachment: fixed;
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
@@ -41,33 +47,7 @@ body {
     border: 2px solid var(--bg-color);
 }
 
-/* CRT Effect */
-#crt-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.4) 100%);
-    pointer-events: none;
-    z-index: 9998;
-}
 
-#scanline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0),
-            rgba(255, 255, 255, 0) 50%,
-            rgba(0, 0, 0, 0.2) 50%,
-            rgba(0, 0, 0, 0.2));
-    background-size: 100% 4px;
-    pointer-events: none;
-    z-index: 9999;
-}
 
 /* Layout */
 .navbar {
