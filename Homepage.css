@@ -22,7 +22,7 @@
 
 body {
     background-color: var(--bg-color);
-    background-image: 
+    background-image:
         linear-gradient(rgba(57, 255, 20, 0.05) 2px, transparent 2px),
         linear-gradient(90deg, rgba(57, 255, 20, 0.05) 2px, transparent 2px);
     background-size: 40px 40px;
@@ -109,7 +109,7 @@ main {
     max-width: 100%;
     margin: 0;
     width: 100%;
-    background-image: linear-gradient(to bottom, rgba(11, 12, 16, 0.6), rgba(11, 12, 16, 1)), url('./UI%20UX/pixel_bg.png');
+    background-image: linear-gradient(to bottom, rgba(11, 12, 16, 0.7), rgba(11, 12, 16, 1)), url('./UI%20UX/pixel_bg.png');
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
