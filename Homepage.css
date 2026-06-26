@@ -554,3 +554,74 @@ main {
     border-top: 2px solid #333;
     margin-top: 50px;
 }
+
+/* Website Portfolio */
+.web-card {
+    background: #000;
+    border: 4px solid var(--text-secondary);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.web-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-highlight);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+}
+
+.web-card-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.web-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.web-card-title {
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.web-visit-btn {
+    font-size: 0.55rem;
+    padding: 8px 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.web-card-desc {
+    color: white;
+    font-size: 0.55rem;
+    line-height: 2.2;
+    flex: 1;
+}
+
+.web-card-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tool-badge {
+    background-color: transparent;
+    border: 2px solid var(--text-highlight);
+    color: var(--text-highlight);
+    font-size: 0.45rem;
+    padding: 4px 8px;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.web-card-password {
+    color: var(--text-secondary);
+    font-size: 0.5rem;
+    line-height: 2;
+}
