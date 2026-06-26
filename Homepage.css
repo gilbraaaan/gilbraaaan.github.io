@@ -263,7 +263,7 @@ main {
     }
 }
 
-.bounce-img {
+.glitch-logo {
     margin-bottom: 20px;
     position: relative;
     animation: logoGlitch 2s infinite;
