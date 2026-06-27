@@ -10,6 +10,7 @@
     /* Red */
     --pixel-border: #39ff14;
     --pixel-bg: #1f2833;
+    --unity-gif-width: 280px;
 }
 
 * {
@@ -763,6 +764,46 @@ main {
     color: #666;
     border-top: 2px solid #333;
     margin-top: 50px;
+}
+
+/* Unity Interactive Apps */
+.unity-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#carousel-pixelart .web-card {
+    display: grid;
+    grid-template-columns: var(--unity-gif-width) 1fr;
+    column-gap: 20px;
+    align-items: start;
+}
+
+#carousel-pixelart .unity-gif {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+}
+
+#carousel-pixelart .web-card-title,
+#carousel-pixelart .web-card-desc,
+#carousel-pixelart .web-card-tools {
+    grid-column: 2;
+}
+
+@media (max-width: 768px) {
+    #carousel-pixelart .web-card {
+        grid-template-columns: 1fr;
+    }
+    #carousel-pixelart .unity-gif {
+        grid-row: auto;
+        grid-column: 1;
+    }
+    #carousel-pixelart .web-card-title,
+    #carousel-pixelart .web-card-desc,
+    #carousel-pixelart .web-card-tools {
+        grid-column: 1;
+    }
 }
 
 /* Website Portfolio */
