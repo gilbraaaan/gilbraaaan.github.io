@@ -142,6 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Image Protection
+document.addEventListener('contextmenu', function (e) {
+    if (e.target.matches('img')) {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('dragstart', function (e) {
+    if (e.target.matches('img')) {
+        e.preventDefault();
+    }
+});
+
 // Carousel Logic
 window.moveSlide = function (carouselId, step) {
     const container = document.getElementById(carouselId);

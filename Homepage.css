@@ -722,6 +722,13 @@ main {
     box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
 }
 
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+}
+
 .card img,
 .card iframe {
     width: 100%;
@@ -789,6 +796,16 @@ main {
 #carousel-pixelart .web-card-desc,
 #carousel-pixelart .web-card-tools {
     grid-column: 2;
+}
+
+#carousel-gamedev .web-card {
+    text-align: center;
+}
+
+#carousel-gamedev .web-card-tools,
+#carousel-pixelart .web-card-tools,
+#carousel-webdev .web-card-tools {
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
