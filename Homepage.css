@@ -910,6 +910,58 @@ img {
     grid-column: 2;
 }
 
+/* ===== REAL WORLD DEPLOYMENTS ===== */
+#carousel-deployments .web-card {
+    display: grid;
+    grid-template-columns: var(--unity-gif-width) 1fr;
+    column-gap: 20px;
+    align-items: start;
+}
+
+#carousel-deployments .deploy-media {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: 100%;
+    height: 360px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#carousel-deployments .deploy-media img,
+#carousel-deployments .deploy-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+#carousel-deployments .web-card-title,
+#carousel-deployments .web-card-desc,
+#carousel-deployments .web-card-tools {
+    grid-column: 2;
+}
+
+@media (max-width: 768px) {
+    #carousel-deployments .web-card {
+        grid-template-columns: 1fr;
+    }
+
+    #carousel-deployments .deploy-media {
+        grid-row: auto;
+        height: 300px;
+        margin-bottom: 12px;
+    }
+
+    #carousel-deployments .web-card-title,
+    #carousel-deployments .web-card-desc,
+    #carousel-deployments .web-card-tools {
+        grid-column: 1;
+    }
+}
+
 #carousel-gamedev .web-card {
     text-align: center;
 }

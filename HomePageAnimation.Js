@@ -175,5 +175,8 @@ window.moveSlide = function (carouselId, step) {
     if (newIndex >= slides.length) newIndex = 0;
     if (newIndex < 0) newIndex = slides.length - 1;
 
+    // Pause any video in the slide we're leaving
+    slides[activeIndex].querySelectorAll('video').forEach(v => v.pause());
+
     slides[newIndex].classList.add('active');
 };
