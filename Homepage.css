@@ -50,6 +50,16 @@ body {
     animation: auroraBreath 18s ease-in-out infinite alternate;
 }
 
+/* Jaring yang menyala mengikuti kursor (digambar oleh HomePageAnimation.Js) */
+#grid-glow {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 @keyframes auroraBreath {
     0% {
         background-color: #060d09;
