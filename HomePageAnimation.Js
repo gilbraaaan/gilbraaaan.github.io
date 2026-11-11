@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
         initGridGlow(window.matchMedia('(hover: hover) and (pointer: fine)').matches);
     }
 
+    initCvViewer();
+
     // 1. Smooth Scrolling for navbar links
     document.querySelectorAll('.pixel-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -414,4 +416,81 @@ function initGridGlow(withPointer) {
     });
 
     document.documentElement.addEventListener('mouseleave', () => { last = null; });
+}
+
+// ===== CV VIEWER =====
+// Shows the CV in a popup, rendered page by page onto canvases with PDF.js,
+// so there is no browser PDF toolbar (download / print buttons).
+function initCvViewer() {
+    const CV_URL = './CV/' + encodeURIComponent('CV_M Gilbran Eka Pawitra-_1 Page.pdf');
+    const PDFJS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+    const WORKER_URL = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const openBtn = document.getElementById('cv-open');
+    const modal = document.getElementById('cv-modal');
+    const pages = document.getElementById('cv-pages');
+    if (!openBtn || !modal || !pages) return;
+
+    let rendered = false;
+
+    function loadPdfJs() {
+        if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
+        return new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = PDFJS_URL;
+            s.onload = () => {
+                window.pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER_URL;
+                resolve(window.pdfjsLib);
+            };
+            s.onerror = reject;
+            document.head.appendChild(s);
+        });
+    }
+
+    async function renderCv() {
+        try {
+            const pdfjsLib = await loadPdfJs();
+            const pdf = await pdfjsLib.getDocument(CV_URL).promise;
+            pages.innerHTML = '';
+            // Render sharp enough for the modal width on high-DPI screens
+            const targetWidth = Math.min(pages.clientWidth || 800, 860) * (window.devicePixelRatio || 1);
+
+            for (let n = 1; n <= pdf.numPages; n++) {
+                const page = await pdf.getPage(n);
+                const base = page.getViewport({ scale: 1 });
+                const viewport = page.getViewport({ scale: targetWidth / base.width });
+                const canvas = document.createElement('canvas');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                canvas.setAttribute('aria-label', 'CV page ' + n);
+                pages.appendChild(canvas);
+                await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+            }
+            rendered = true;
+        } catch (err) {
+            console.error('CV viewer:', err);
+            pages.innerHTML = '<p class="cv-loading">FAILED TO LOAD CV. PLEASE TRY AGAIN.</p>';
+        }
+    }
+
+    function open() {
+        modal.hidden = false;
+        document.body.classList.add('cv-open');
+        if (!rendered) renderCv();
+    }
+
+    function close() {
+        modal.hidden = true;
+        document.body.classList.remove('cv-open');
+        openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', open);
+    modal.querySelectorAll('[data-cv-close]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.hidden) close();
+    });
+
+    // View only: block the right-click "Save image as..." menu on the pages
+    pages.addEventListener('contextmenu', (e) => e.preventDefault());
 }
